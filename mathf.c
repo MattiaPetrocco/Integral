@@ -6,17 +6,18 @@
 */
 
 #include "mathf.h"
+#include "struct.h"
 
-float Polynomial(float* coeff, int size, float in) {
-
-	int i; 				/* counter for loops */
-	float out = 0.;		/* used as accumulator to compute the value of the function given an input */
-	float x = in;		/* to represent the different elements of the polynomial (x, x^2, x^3,...) */
-
-	out = coeff[0];
-	for (i = 1; i < size; i++) {
-		out += coeff[i] * x;
-		x *= in;			/* x^i */
+float Polynomial(poly_s polyf, float in) {
+	
+	int i;
+	float out = 0.;
+	float x = in;	
+	
+	out = polyf.coeffs[0];
+	for (i=1; i<polyf.degree; i++) {
+		out += polyf.coeffs[i]*x;
+		x *= in;
 	}
 
 	return out;

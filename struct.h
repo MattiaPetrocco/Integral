@@ -1,6 +1,6 @@
 /** \file structs.h
 	\brief defines the structs 
-	\author Paolo Gastaldo
+	\author Mattia Petrocco
 
 	Details.
 */
