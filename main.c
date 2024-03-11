@@ -20,7 +20,7 @@
 
 #include <stdio.h> 
 #include <stdlib.h> 
-#include "io.h"
+#include "IO.h"
 #include "mathf.h"
 #include "struct.h"
 
