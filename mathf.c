@@ -8,11 +8,11 @@
 #include "mathf.h"
 #include "struct.h"
 
-float Polynomial(poly_s polyf, float in) {
+double Polynomial(poly_s polyf, double in) {
 	
 	int i;
-	float out = 0.;
-	float x = in;	
+	double out = 0.;
+	double x = in;	
 	
 	out = polyf.coeffs[0];
 	for (i=1; i<polyf.degree; i++) {
@@ -24,7 +24,7 @@ float Polynomial(poly_s polyf, float in) {
 
 }
 
-void Rectangular(float* values, int size, float stepsize, float* integ1, float* integ2) {
+void Rectangular(double* values, int size, double stepsize, double* integ1, double* integ2) {
 
 	int i; 	/* counter for loops */
 
@@ -42,12 +42,12 @@ void Rectangular(float* values, int size, float stepsize, float* integ1, float* 
 }
 
 
-float Trapezoidal(float* values, int size, float stepsize) {
+float Trapezoidal(double* values, int size, double stepsize) {
 
 	int i; 		/* counter for loops */
 
-	float integ = 0.; 		/* used as accumulator to compute the integral */
-	float h = stepsize / 2.;	/* to avoid dividing by 2 at each round of the loop */
+	double integ = 0.; 		/* used as accumulator to compute the integral */
+	double h = stepsize / 2.;	/* to avoid dividing by 2 at each round of the loop */
 
 	for (i = 0; i < (size - 1); i++)
 		integ += h * (values[i + 1] + values[i]);

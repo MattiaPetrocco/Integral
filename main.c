@@ -39,11 +39,11 @@ int main() {
 	float xmax;
 	poly_s pf;
 	
-	float in;
-	float gap;
-	float* fvalues = NULL;
+	double in;
+	double gap;
+	double* fvalues = NULL;
 	
-	float integ1, integ2;
+	double integ1, integ2;
 	int i;
 	int rv;	
 	FILE* fptr = NULL;
@@ -75,10 +75,10 @@ int main() {
 	
 		
 	in = xmin;
-	gap = (xmax-xmin)/(float)steps;
+	gap = (double)(xmax-xmin)/(double)steps;
 	
 	/* allocation of the array fvalues */
-	fvalues = (float*)malloc(sizeof(float)*(steps+1));
+	fvalues = (double*)malloc(sizeof(double)*(steps+1));
 	if (fvalues == NULL) {
 		printf("\nERROR: cannot allocate memory\n");
 		exit(-1);
